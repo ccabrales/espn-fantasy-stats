@@ -8,6 +8,7 @@ install:
   - npm install
   - cd client
   - npm install
+  - cd ..
 script:
   - cd client
   - npm run build
