@@ -25,5 +25,6 @@
       "lcov",
       "cobertura"
     ]
-  }
+  },
+  "proxy": "http://localhost:3001/"
 }

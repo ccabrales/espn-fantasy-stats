@@ -8,6 +8,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         console.log('response: ', response); // eslint-disable-line
+        console.log('finished'); // eslint-disable-line
       });
   }
 
