@@ -42,7 +42,7 @@
       }
     },
     "start": {
-      "command": "npm run server:dev",
+      "command": "npm run server",
       "env": {
         "DEBUG": "app:*",
         "NODE_ENV": "production"
