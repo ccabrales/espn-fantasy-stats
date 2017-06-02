@@ -4,6 +4,10 @@ node_js:
 - '8'
 - '7'
 - '6'
+install:
+  - npm install
+  - cd client
+  - npm install
 deploy:
   provider: heroku
   api_key:
