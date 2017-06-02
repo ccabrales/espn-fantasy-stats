@@ -22,20 +22,26 @@
       }
     },
     "dev": {
-      "command": "concurrently \"npm run server\" \"npm run client\"",
+      "command": "concurrently \"npm run server:dev\" \"npm run client\"",
       "env": {
         "DEBUG": "app:*",
         "NODE_ENV": "development"
       }
     },
     "server": {
+      "command": "babel-node server.js",
+      "env": {
+        "DEBUG": "app:*"
+      }
+    },
+    "server:dev": {
       "command": "nodemon server.js",
       "env": {
         "DEBUG": "app:*"
       }
     },
     "start": {
-      "command": "npm run server",
+      "command": "npm run server:dev",
       "env": {
         "DEBUG": "app:*",
         "NODE_ENV": "production"
