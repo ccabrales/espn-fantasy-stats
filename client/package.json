@@ -7,12 +7,23 @@
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "enzyme": "^2.8.2",
+    "jest-enzyme": "^3.2.0",
+    "react-scripts": "1.0.7",
+    "react-test-renderer": "^15.5.4"
   },
   "scripts": {
     "start": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": ["src/**/*.js"],
+    "coverageReporters": [
+      "text-summary",
+      "lcov",
+      "cobertura"
+    ]
   }
 }

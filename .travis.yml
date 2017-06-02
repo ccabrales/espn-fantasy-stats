@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- node
+- '8'
+- '7'
+- '6'
+deploy:
+  provider: heroku
+  api_key:
+    secure: mPH3IwiLIcBWeJobz3/Ye28SVHLxsggUWVGmbBAzHzdEL2XekPAV4/m6MsrnMC6S8HM9YO/ThRijglQF5cHSYNwwWXCpyx2ttbzbB9F4i4ZjXf8AGVvCxvX9CtGq6rQOV2JSVXt6+ObYh7xIulWiLmHItyXkbFxHDDZeQ2WcnB41vyFUJ5qx+5vkO/pXKbD/IKfsNCBtGPp6qkhSiFDf/D1N9kLkCUPjBIdENbApXO1GanU49540OcfR+P85hJNeDi7XlBrNhRpGVtMjAJqSXaVp9mq3Ay7fBHrVEx0KQ/+R1hFdlY3RQqM26x02jvB63friO0LlZnRNK5Jws+FXdRW4MRHCi10jNtrNq7Qv8rzLChxugcsqeT4p9ZWdVdHh6PVRQAaQ+cF/sl0rlzViwuyw443a0uC6drWb5qfI1XYbSCaUpd9aczCB7TIKRCcqzy6uGUQJVY3ryiQ+uUAKpzJ3hYEGNPT8n7O5jNY/HJrHoJwEzEc8xAImFWCYAH7V2+5BT1ACPTvd8uBVXr7BXIJjOpxhNVv7UozNo5TxOx+Npon4g1aDqMFFmVbA15WbHZ5VQer8B7pKgDbFsiQSu7Y/OAtAAI4QbnAXyuZ845YWEu/6G3zexkU3IoZbDG2912s85lOv5FDVmiwZlNscG9Axm9zrYMxW4wKxNccDzWs=
+  app: espn-fantasy-stats
+  on:
+    repo: ccabrales/espn-fantasy-stats

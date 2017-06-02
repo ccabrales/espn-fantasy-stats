@@ -9,7 +9,9 @@
     "gitcommit": "git-cz",
     "lint": "eslint . --ext .js",
     "lint:fix": "npm run lint -- --fix",
-    "precommit": "cd client && CI=true npm test && cd .. && npm run lint"
+    "test": "better-npm-run test",
+    "posttest": "npm run lint",
+    "precommit": "npm run test"
   },
   "betterScripts": {
     "client": {
@@ -28,6 +30,13 @@
       "command": "concurrently \"npm run server\" \"npm run client\"",
       "env": {
         "DEBUG": "app:*"
+      }
+    },
+    "test": {
+      "command": "cd client && npm test",
+      "env": {
+        "DEBUG": "app:*",
+        "CI": true
       }
     }
   },
