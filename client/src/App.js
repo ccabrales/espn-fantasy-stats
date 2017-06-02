@@ -2,16 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-  componentDidMount() {
-    fetch('/api/test', { accept: 'application/json' })
-      .then(response => response.json())
-      .then(response => {
-        console.log('response: ', response); // eslint-disable-line
-        console.log('finished'); // eslint-disable-line
-      });
-  }
-
+class App extends Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div className='App'>

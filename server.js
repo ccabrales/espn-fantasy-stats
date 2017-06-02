@@ -9,10 +9,6 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
 }
 
-app.get('/api/test', (req, res) => {
-  res.json({ hello: 'there' });
-});
-
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   debug(`Server is now running on port ${port}`);

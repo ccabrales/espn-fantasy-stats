@@ -11,6 +11,7 @@
   "rules": {
     "array-bracket-spacing": [2, "always"],
     "arrow-parens": 0,
+    "import/no-extraneous-dependencies": 0,
     "jsx-quotes": [2, "prefer-single"],
     "jsx-a11y/no-static-element-interactions": 0,
     "max-len": ["error", { "code": 120, "ignoreTrailingComments": true }],
