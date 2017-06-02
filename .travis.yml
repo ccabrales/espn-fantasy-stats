@@ -12,6 +12,7 @@ install:
 script:
   - cd client
   - npm run build
+  - cd ..
 deploy:
   provider: heroku
   api_key:
