@@ -19,3 +19,4 @@ deploy:
   app: espn-fantasy-stats
   on:
     repo: ccabrales/espn-fantasy-stats
+  skip_cleanup: true
