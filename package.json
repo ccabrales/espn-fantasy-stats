@@ -1,0 +1,68 @@
+{
+  "name": "espn-fantasy-stats",
+  "version": "1.0.0",
+  "description": "View fantasy stats for ESPN fantasy football leagues",
+  "scripts": {
+    "start": "better-npm-run start",
+    "server": "better-npm-run server",
+    "client": "better-npm-run client",
+    "gitcommit": "git-cz",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "npm run lint -- --fix",
+    "precommit": "cd client && CI=true npm test && cd .. && npm run lint"
+  },
+  "betterScripts": {
+    "client": {
+      "command": "cd client && npm start",
+      "env": {
+        "DEBUG": "app:*"
+      }
+    },
+    "server": {
+      "command": "nodemon server.js",
+      "env": {
+        "DEBUG": "app:*"
+      }
+    },
+    "start": {
+      "command": "concurrently \"npm run server\" \"npm run client\"",
+      "env": {
+        "DEBUG": "app:*"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccabrales/espn-fantasy-stats.git"
+  },
+  "author": "Casey Cabrales (ccabrales)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ccabrales/espn-fantasy-stats/issues"
+  },
+  "homepage": "https://github.com/ccabrales/espn-fantasy-stats#readme",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "commitizen": "^2.9.6",
+    "concurrently": "^3.4.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "husky": "^0.13.4"
+  },
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "better-npm-run": "0.0.15",
+    "debug": "^2.6.8",
+    "express": "^4.15.3",
+    "nodemon": "^1.11.0"
+  }
+}
