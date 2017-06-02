@@ -8,6 +8,9 @@ install:
   - npm install
   - cd client
   - npm install
+script:
+  - cd client
+  - npm run build
 deploy:
   provider: heroku
   api_key:

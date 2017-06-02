@@ -4,6 +4,7 @@
   "description": "View fantasy stats for ESPN fantasy football leagues",
   "scripts": {
     "start": "better-npm-run start",
+    "dev": "better-npm-run dev",
     "server": "better-npm-run server",
     "client": "better-npm-run client",
     "gitcommit": "git-cz",
@@ -20,6 +21,13 @@
         "DEBUG": "app:*"
       }
     },
+    "dev": {
+      "command": "concurrently \"npm run server\" \"npm run client\"",
+      "env": {
+        "DEBUG": "app:*",
+        "NODE_ENV": "development"
+      }
+    },
     "server": {
       "command": "nodemon server.js",
       "env": {
@@ -27,9 +35,10 @@
       }
     },
     "start": {
-      "command": "concurrently \"npm run server\" \"npm run client\"",
+      "command": "npm run server",
       "env": {
-        "DEBUG": "app:*"
+        "DEBUG": "app:*",
+        "NODE_ENV": "production"
       }
     },
     "test": {
