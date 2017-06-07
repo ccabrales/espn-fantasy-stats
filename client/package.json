@@ -4,7 +4,12 @@
   "private": true,
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "recharts": "^1.0.0-alpha.0",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "semantic-ui-react": "^0.68.5"
   },
   "devDependencies": {
     "enzyme": "^2.8.2",
@@ -19,7 +24,9 @@
     "eject": "react-scripts eject"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.js"],
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
     "coverageReporters": [
       "text-summary",
       "lcov",
