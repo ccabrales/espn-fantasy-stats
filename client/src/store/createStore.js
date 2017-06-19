@@ -1,24 +1,36 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import makeRootReducer from './reducers';
+import rootReducer from '../reducers/reducers';
 
-export default (initialState = {}) => {
+export default (initialState) => {
   const middleware = [ thunk ];
 
   const enhancers = [];
+  let composeEnhancers = compose;
+
   if (process.env.NODE_ENV === 'development') {
-    const devToolsExtension = window.devToolsExtension;
+    const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__; // eslint-disable-line no-underscore-dangle
     if (typeof devToolsExtension === 'function') {
-      enhancers.push(devToolsExtension);
+      composeEnhancers = devToolsExtension;
     }
   }
 
-  return createStore(
-    makeRootReducer(),
+  const store = createStore(
+    rootReducer,
     initialState,
-    compose(
+    composeEnhancers(
       applyMiddleware(...middleware),
       ...enhancers
     )
   );
+
+  if (process.env.NODE_ENV !== 'production') {
+    if (module.hot) {
+      module.hot.accept('../reducers/reducers', () => {
+        store.replaceReducer(rootReducer);
+      });
+    }
+  }
+
+  return store;
 };

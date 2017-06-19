@@ -11,4 +11,16 @@ ReactDOM.render(
   <AppContainer store={store} />,
   document.getElementById('root')
 );
+
+if (process.env.NODE_ENV !== 'production') {
+  if (module.hot) {
+    module.hot.accept('./containers/AppContainer', () => {
+      ReactDOM.render(
+        <AppContainer store={store} />,
+        document.getElementById('root')
+      );
+    });
+  }
+}
+
 registerServiceWorker();

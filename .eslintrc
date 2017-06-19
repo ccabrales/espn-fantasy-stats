@@ -5,8 +5,7 @@
     "node": true,
     "jest": true,
     "worker": true,
-    "browser": true,
-    "mocha": true
+    "browser": true
   },
   "rules": {
     "array-bracket-spacing": [2, "always"],
@@ -16,12 +15,13 @@
     "jsx-quotes": [2, "prefer-single"],
     "jsx-a11y/no-static-element-interactions": 0,
     "max-len": ["error", { "code": 120, "ignoreTrailingComments": true }],
-    "no-console": 2,
+    "no-console": ["error", { "allow": ["error"] }],
     "no-use-before-define": [2, "nofunc"],
     "no-shadow": 0,
     "prefer-const": 1,
     "quote-props": [1, "consistent-as-needed"],
     "react/no-multi-comp": 0,
+    "react/forbid-prop-types": 0,
     "react/prop-types": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/no-array-index-key": 0,

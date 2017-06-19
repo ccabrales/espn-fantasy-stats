@@ -12,6 +12,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
 }
 
+// TODO: maybe look into transforming the response for error cases myself. Then can update fetchService
 app.get('/api/leagueInfo', (req, res) => {
   const leagueId = req.query.leagueId;
   const seasonId = req.query.seasonId;
