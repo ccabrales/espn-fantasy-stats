@@ -2,10 +2,13 @@ const express = require('express');
 const path = require('path');
 const debug = require('debug')('app:api server');
 const request = require('request');
+const helmet = require('helmet');
 
 const app = express();
 
 const apiPrefix = 'http://games.espn.com/ffl/api/v2';
+
+app.use(helmet());
 
 if (process.env.NODE_ENV === 'production') {
   debug('Server is being run in production, meaning it will only serve static assets');
