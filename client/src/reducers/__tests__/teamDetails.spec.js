@@ -1,5 +1,5 @@
 import reducer, { initialState } from '../teamDetails';
-import { REQUEST_TEAM_DETAILS, RECEIVE_TEAM_DETAILS } from '../../actions/teamDetails';
+import { REQUEST_TEAM_DETAILS, RECEIVE_TEAM_DETAILS } from '../../actions/teamDetailsActions';
 
 describe('(Reducers) teamDetails', () => {
   it('Should return the initial state', () => {

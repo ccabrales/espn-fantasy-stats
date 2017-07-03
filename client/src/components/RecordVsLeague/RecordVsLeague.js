@@ -4,16 +4,19 @@ import { Loader } from 'semantic-ui-react';
 
 class RecordVsLeague extends React.Component {
   componentDidMount() {
-    this.props.fetchDetails(12345, 2016); // TODO: remove hard coded values moving forward
+    const { fetchDetails, navData } = this.props;
+    const { leagueId, seasonId } = navData;
+    fetchDetails(leagueId, seasonId);
   }
 
   render() {
     // TODO: use teamDetails to display
-    const { teamDetails } = this.props;
+    const { teamDetails, navData } = this.props;
+    const { leagueId, seasonId } = navData;
 
     // TODO: remove hard coded values
-    const leagueId = 12345;
-    const seasonId = 2016;
+    // const leagueId = 12345;
+    // const seasonId = 2016;
 
     if (!teamDetails[leagueId] || !teamDetails[leagueId][seasonId] || teamDetails[leagueId][seasonId].isFetching) {
       return (
@@ -27,7 +30,11 @@ class RecordVsLeague extends React.Component {
 
 RecordVsLeague.propTypes = {
   fetchDetails: PropTypes.func.isRequired,
-  teamDetails: PropTypes.object.isRequired
+  teamDetails: PropTypes.object.isRequired,
+  navData: PropTypes.shape({
+    leagueId: PropTypes.string,
+    seasonId: PropTypes.number.isRequired
+  }).isRequired
 };
 
 export default RecordVsLeague;

@@ -7,7 +7,7 @@ import {
   actions,
   fetchTeamDetails,
   fetchTeamDetailsIfNeeded
-} from '../teamDetails';
+} from '../teamDetailsActions';
 
 jest.mock('../../services/fetchService');
 
@@ -140,10 +140,64 @@ describe('(Actions) teamDetails', () => {
       it('Should not call the API if leagueId and/or seasonId are not defined - error', () => {
         const store = mockStore({ teamDetails: {} });
 
+        const expectedActions = [
+          {
+            type: RECEIVE_TEAM_DETAILS,
+            payload: {},
+            leagueId: undefined,
+            seasonId: undefined
+          }
+        ];
+
         return store.dispatch(fetchTeamDetailsIfNeeded())
-          .catch((ex) => {
-            expect(store.getActions()).toHaveLength(0);
+          .catch(ex => {
+            expect(store.getActions()).toEqual(expectedActions);
             expect(ex).toEqual('League ID and/or Season ID is invalid');
+          });
+      });
+
+      it('Should call the API if league details are not defined', () => {
+        const fetchService = require('../../services/fetchService');
+
+        const store = mockStore({
+          teamDetails: {
+            12345: {
+              2016: {
+                isFetching: false,
+                teams: [ { teamId: 1 } ]
+              }
+            }
+          }
+        });
+        const leagueId = 1234;
+        const seasonId = 2017;
+        const response = {
+          teams: [
+            {
+              teamId: 1,
+              teamNickname: 'Fantasy Team Name'
+            }
+          ]
+        };
+        fetchService.__setMockResponse(response);
+
+        const expectedActions = [
+          {
+            type: REQUEST_TEAM_DETAILS,
+            leagueId,
+            seasonId
+          },
+          {
+            type: RECEIVE_TEAM_DETAILS,
+            payload: response,
+            leagueId,
+            seasonId
+          }
+        ];
+
+        return store.dispatch(fetchTeamDetailsIfNeeded(leagueId, seasonId))
+          .then(() => {
+            expect(store.getActions()).toEqual(expectedActions);
           });
       });
 

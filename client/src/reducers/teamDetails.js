@@ -1,7 +1,7 @@
 import {
   REQUEST_TEAM_DETAILS,
   RECEIVE_TEAM_DETAILS
-} from '../actions/teamDetails';
+} from '../actions/teamDetailsActions';
 
 export const initialState = {};
 

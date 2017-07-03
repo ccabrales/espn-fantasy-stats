@@ -72,10 +72,10 @@ export const fetchTeamDetailsIfNeeded = (leagueId, seasonId) => (
       if (shouldFetchTeamDetails(getState(), leagueId, seasonId)) {
         return dispatch(fetchTeamDetails(leagueId, seasonId));
       }
-
       return Promise.resolve();
     }
     // If the above if statement is not executed, one of the required params are undefined and no call should be made
+    dispatch(receiveTeamDetails({}, leagueId, seasonId));
     return Promise.reject('League ID and/or Season ID is invalid');
   }
 );

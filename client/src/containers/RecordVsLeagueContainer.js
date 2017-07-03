@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
-import { fetchTeamDetailsIfNeeded } from '../actions/teamDetails';
+import { fetchTeamDetailsIfNeeded } from '../actions/teamDetailsActions';
 import RecordVsLeague from '../components/RecordVsLeague';
 
-const mapStateToProps = (state) => ({
-  teamDetails: state.teamDetails
+const mapStateToProps = state => ({
+  teamDetails: state.teamDetails,
+  navData: state.navBar
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   fetchDetails: (leagueId, seasonId) => {
     dispatch(fetchTeamDetailsIfNeeded(leagueId, seasonId))
       .catch(ex => {

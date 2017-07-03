@@ -9,18 +9,19 @@ class AppContainer extends React.Component {
   }
 
   render() {
-    const { store } = this.props;
+    const { store, history } = this.props;
 
     return (
       <Provider store={store}>
-        <App />
+        <App history={history} />
       </Provider>
     );
   }
 }
 
 AppContainer.propTypes = {
-  store: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
+  store: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  history: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
 };
 
 export default AppContainer;
