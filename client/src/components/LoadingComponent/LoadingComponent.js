@@ -1,0 +1,26 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Loader } from 'semantic-ui-react';
+
+/**
+ * Component to handle loading of different routes, and error cases in that loading. Used by react-loadable.
+ * @param isLoading - Is the route loading
+ * @param error - Is there an error while loading
+ * @constructor
+ */
+const LoadingComponent = ({ isLoading, error }) => {
+  if (isLoading) {
+    return <Loader active inline='centered' />;
+  } else if (error) {
+    return <div>Sorry, there was a problem loading the page. Please try again.</div>;
+  }
+
+  return null;
+};
+
+LoadingComponent.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired
+};
+
+export default LoadingComponent;
