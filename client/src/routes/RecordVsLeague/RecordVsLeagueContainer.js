@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { fetchTeamDetailsIfNeeded } from '../actions/teamDetailsActions';
-import RecordVsLeague from '../components/RecordVsLeague';
+import { fetchTeamDetailsIfNeeded } from '../../actions/teamDetailsActions';
+import RecordVsLeague from './RecordVsLeague';
 
 const mapStateToProps = state => ({
   teamDetails: state.teamDetails,

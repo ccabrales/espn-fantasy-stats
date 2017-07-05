@@ -9,21 +9,26 @@ import './App.css';
 // -------------------------------------
 // Asynchronously load route components
 // -------------------------------------
-const AsyncRecordVsLeagueContainer = Loadable({
-  loader: () => import(/* webpackChunkName: "record-vs-league" */'../../containers/RecordVsLeagueContainer'),
+const AsyncHome = Loadable({
+  loader: () => import(/* webpackChunkName: "home" */ '../../routes/Home'),
+  loading: LoadingComponent
+});
+
+const AsyncRecordVsLeague = Loadable({
+  loader: () => import(/* webpackChunkName: "record-vs-league" */ '../../routes/RecordVsLeague'),
   loading: LoadingComponent
 });
 
 const AsyncPageNotFound = Loadable({
-  loader: () => import(/* webpackChunkName: "page-not-found" */'../../routes/PageNotFound'),
+  loader: () => import(/* webpackChunkName: "page-not-found" */ '../../routes/PageNotFound'),
   loading: LoadingComponent
 });
 
-// TODO: add a default handler/view for when seasonID or leagueID is undefined (like when app first loads)
 const App = ({ history }) => (
   <ConnectedRouter history={history}>
     <Switch>
-      <CoreLayout exact path='/' component={AsyncRecordVsLeagueContainer} />
+      <CoreLayout exact path='/' component={AsyncHome} />
+      <CoreLayout exact path='/teamDetails' component={AsyncRecordVsLeague} />
       <CoreLayout component={AsyncPageNotFound} />
     </Switch>
   </ConnectedRouter>

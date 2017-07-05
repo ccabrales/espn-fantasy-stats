@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { Divider } from 'semantic-ui-react';
 import NavBar from '../../components/NavBar/index';
 
 /**
@@ -25,6 +26,8 @@ const CoreLayout = ({ component: Component, navigateToPage, navBarData, updateLe
           navigateToPage={navigateToPage}
           updateLeagueData={updateLeagueData}
         />
+
+        <Divider />
 
         <main>
           <Component {...matchProps} />
