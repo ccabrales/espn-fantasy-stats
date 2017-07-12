@@ -36,10 +36,10 @@ describe('NavBar', () => {
     expect(wrapper.is('nav')).toBe(true);
   });
 
-  it('Should render a Menu with 2 menu items', () => {
+  it('Should render a Menu with 3 menu items', () => {
     const menu = wrapper.find(Menu);
     expect(menu).toBePresent();
-    expect(menu.find(Menu.Item)).toHaveLength(2);
+    expect(menu.find(Menu.Item)).toHaveLength(3);
   });
 
   it('First menu item should be Home', () => {
@@ -48,8 +48,14 @@ describe('NavBar', () => {
     expect(menuItem.prop('active')).toBe(true);
   });
 
-  it('Second menu item should be for team details', () => {
+  it('Second menu item should be for league info', () => {
     const menuItem = wrapper.find(Menu.Item).at(1);
+    expect(menuItem).toBePresent();
+    expect(menuItem.prop('active')).toBe(false);
+  });
+
+  it('Third menu item should be for team details', () => {
+    const menuItem = wrapper.find(Menu.Item).at(2);
     expect(menuItem).toBePresent();
     expect(menuItem.prop('active')).toBe(false);
   });
@@ -64,8 +70,14 @@ describe('NavBar', () => {
     expect(navigateToPage).toHaveBeenCalledWith('/');
   });
 
-  it('Clicking Team Details menu item should call navigateToPage with proper url', () => {
+  it('Clicking League Info menu item should call navigateToPage with proper url', () => {
     wrapper.find(Menu.Item).at(1).simulate('click');
+    expect(navigateToPage.mock.calls).toHaveLength(1);
+    expect(navigateToPage).toHaveBeenCalledWith('/leagueInfo');
+  });
+
+  it('Clicking Team Details menu item should call navigateToPage with proper url', () => {
+    wrapper.find(Menu.Item).at(2).simulate('click');
     expect(navigateToPage.mock.calls).toHaveLength(1);
     expect(navigateToPage).toHaveBeenCalledWith('/teamDetails');
   });

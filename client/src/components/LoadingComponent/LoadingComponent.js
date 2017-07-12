@@ -4,8 +4,8 @@ import { Loader } from 'semantic-ui-react';
 
 /**
  * Component to handle loading of different routes, and error cases in that loading. Used by react-loadable.
- * @param isLoading - Is the route loading
- * @param error - Is there an error while loading
+ * @param {boolean} isLoading - Is the route loading
+ * @param {boolean} error - Is there an error while loading
  * @constructor
  */
 const LoadingComponent = ({ isLoading, error }) => {
@@ -20,7 +20,11 @@ const LoadingComponent = ({ isLoading, error }) => {
 
 LoadingComponent.propTypes = {
   isLoading: PropTypes.bool.isRequired,
-  error: PropTypes.bool.isRequired
+  error: PropTypes.bool
+};
+
+LoadingComponent.defaultProps = {
+  error: false
 };
 
 export default LoadingComponent;

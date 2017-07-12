@@ -22,6 +22,22 @@ export const actions = {
 };
 
 /**
+ * Add some additional properties to team details
+ * @param data
+ * @returns {{teamName: string, teamRecord: string, pointsFor, pointsAgainst}}
+ */
+export const formatTeamDetails = teams => (
+  teams.map(team => {
+    const teamName = `${team.teamLocation} ${team.teamNickname}`;
+    const teamRecord = `${team.record.overallWins}-${team.record.overallLosses}-${team.record.overallTies}`;
+    const pointsFor = team.record.pointsFor;
+    const pointsAgainst = team.record.pointsAgainst;
+
+    return { ...team, teamName, teamRecord, pointsFor, pointsAgainst };
+  })
+);
+
+/**
  * Fetch the details for the provided league and season
  * @param leagueId
  * @param seasonId
@@ -33,11 +49,12 @@ export const fetchTeamDetails = (leagueId, seasonId) => (
 
     return fetchService(`/api/teamDetails?leagueId=${leagueId}&seasonId=${seasonId}`)
       .then(response => {
-        dispatch(receiveTeamDetails(response, leagueId, seasonId));
+        const formattedTeams = formatTeamDetails(response.teams);
+        dispatch(receiveTeamDetails({ teams: formattedTeams, metadata: response.metadata }, leagueId, seasonId));
       })
-      .catch(() => {
-        // TODO: track the error through other means
-        dispatch(receiveTeamDetails({}, leagueId, seasonId));
+      .catch(ex => {
+        dispatch(receiveTeamDetails({ errorMessage: ex }, leagueId, seasonId));
+        throw ex;
       });
   }
 );
@@ -56,6 +73,8 @@ const shouldFetchTeamDetails = (state, leagueId, seasonId) => {
     return true;
   } else if (details.isFetching) {
     return false;
+  } else if (details.data.errorMessage) { // Retry if there was an error before
+    return true;
   }
   return false;
 };
@@ -75,7 +94,8 @@ export const fetchTeamDetailsIfNeeded = (leagueId, seasonId) => (
       return Promise.resolve();
     }
     // If the above if statement is not executed, one of the required params are undefined and no call should be made
-    dispatch(receiveTeamDetails({}, leagueId, seasonId));
-    return Promise.reject('League ID and/or Season ID is invalid');
+    const errorMessage = 'League ID and/or Season ID is invalid';
+    dispatch(receiveTeamDetails({ errorMessage }, leagueId, seasonId));
+    return Promise.reject(errorMessage);
   }
 );

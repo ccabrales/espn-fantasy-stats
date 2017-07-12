@@ -8,6 +8,8 @@ import {
   fetchTeamDetails,
   fetchTeamDetailsIfNeeded
 } from '../teamDetailsActions';
+import teamDetails from '../../__mockData__/teamDetails';
+import formattedTeamDetails from '../../__mockData__/teamDetailsFormatted';
 
 jest.mock('../../services/fetchService');
 
@@ -76,15 +78,7 @@ describe('(Actions) teamDetails', () => {
         const store = mockStore({ teamDetails: {} });
         const leagueId = 12345;
         const seasonId = 2017;
-        const response = {
-          teams: [
-            {
-              teamId: 1,
-              teamNickname: 'Fantasy Team Name'
-            }
-          ]
-        };
-        fetchService.__setMockResponse(response);
+        fetchService.__setMockResponse(teamDetails);
 
         const expectedActions = [
           {
@@ -94,7 +88,7 @@ describe('(Actions) teamDetails', () => {
           },
           {
             type: RECEIVE_TEAM_DETAILS,
-            payload: response,
+            payload: formattedTeamDetails,
             leagueId,
             seasonId
           }
@@ -106,7 +100,7 @@ describe('(Actions) teamDetails', () => {
           });
       });
 
-      it('Should correctly add empty response data to the store on failed API call', () => {
+      it('Should correctly add error response data to the store on failed API call', () => {
         const fetchService = require('../../services/fetchService');
         const response = 'Error retrieving data';
         fetchService.__setMockResponse(response, true);
@@ -123,14 +117,14 @@ describe('(Actions) teamDetails', () => {
           },
           {
             type: RECEIVE_TEAM_DETAILS,
-            payload: {},
+            payload: { errorMessage: response },
             leagueId,
             seasonId
           }
         ];
 
         return store.dispatch(fetchTeamDetails(leagueId, seasonId))
-          .then(() => {
+          .catch(() => {
             expect(store.getActions()).toEqual(expectedActions);
           });
       });
@@ -139,11 +133,12 @@ describe('(Actions) teamDetails', () => {
     describe('fetchTeamDetailsIfNeeded', () => {
       it('Should not call the API if leagueId and/or seasonId are not defined - error', () => {
         const store = mockStore({ teamDetails: {} });
+        const errorMessage = 'League ID and/or Season ID is invalid';
 
         const expectedActions = [
           {
             type: RECEIVE_TEAM_DETAILS,
-            payload: {},
+            payload: { errorMessage },
             leagueId: undefined,
             seasonId: undefined
           }
@@ -152,7 +147,7 @@ describe('(Actions) teamDetails', () => {
         return store.dispatch(fetchTeamDetailsIfNeeded())
           .catch(ex => {
             expect(store.getActions()).toEqual(expectedActions);
-            expect(ex).toEqual('League ID and/or Season ID is invalid');
+            expect(ex).toEqual(errorMessage);
           });
       });
 
@@ -164,22 +159,15 @@ describe('(Actions) teamDetails', () => {
             12345: {
               2016: {
                 isFetching: false,
-                teams: [ { teamId: 1 } ]
+                data: {}
               }
             }
           }
         });
         const leagueId = 1234;
         const seasonId = 2017;
-        const response = {
-          teams: [
-            {
-              teamId: 1,
-              teamNickname: 'Fantasy Team Name'
-            }
-          ]
-        };
-        fetchService.__setMockResponse(response);
+
+        fetchService.__setMockResponse(teamDetails);
 
         const expectedActions = [
           {
@@ -189,7 +177,7 @@ describe('(Actions) teamDetails', () => {
           },
           {
             type: RECEIVE_TEAM_DETAILS,
-            payload: response,
+            payload: formattedTeamDetails,
             leagueId,
             seasonId
           }
@@ -216,15 +204,8 @@ describe('(Actions) teamDetails', () => {
         });
         const leagueId = 12345;
         const seasonId = 2017;
-        const response = {
-          teams: [
-            {
-              teamId: 1,
-              teamNickname: 'Fantasy Team Name'
-            }
-          ]
-        };
-        fetchService.__setMockResponse(response);
+
+        fetchService.__setMockResponse(teamDetails);
 
         const expectedActions = [
           {
@@ -234,7 +215,7 @@ describe('(Actions) teamDetails', () => {
           },
           {
             type: RECEIVE_TEAM_DETAILS,
-            payload: response,
+            payload: formattedTeamDetails,
             leagueId,
             seasonId
           }
@@ -270,7 +251,11 @@ describe('(Actions) teamDetails', () => {
           teamDetails: {
             12345: {
               2017: {
-                isFetching: false
+                isFetching: false,
+                data: {
+                  teams: [],
+                  metadata: {}
+                }
               }
             }
           }

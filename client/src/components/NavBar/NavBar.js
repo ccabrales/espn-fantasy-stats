@@ -31,6 +31,11 @@ class NavBar extends React.Component {
             onClick={() => this.handleMenuItemClick('/')}
           />
           <Menu.Item
+            name='leagueInfo'
+            active={location.pathname === '/leagueInfo'}
+            onClick={() => this.handleMenuItemClick('/leagueInfo')}
+          />
+          <Menu.Item
             name='teamDetails'
             active={location.pathname === '/teamDetails'}
             onClick={() => this.handleMenuItemClick('/teamDetails')}

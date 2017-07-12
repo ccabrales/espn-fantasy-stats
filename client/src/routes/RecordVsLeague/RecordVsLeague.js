@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Loader } from 'semantic-ui-react';
+import ErrorMessage from '../../components/ErrorMessage';
+import { getValue } from '../../services/utility';
 
 class RecordVsLeague extends React.Component {
   componentDidMount() {
@@ -9,22 +11,28 @@ class RecordVsLeague extends React.Component {
     fetchDetails(leagueId, seasonId);
   }
 
-  render() {
-    // TODO: use teamDetails to display
-    const { teamDetails, navData } = this.props;
-    const { leagueId, seasonId } = navData;
+  componentWillUpdate(nextProps) {
+    const { navData, fetchDetails } = this.props;
+    const { navData: nextNavData } = nextProps;
 
-    // TODO: remove hard coded values
-    // const leagueId = 12345;
-    // const seasonId = 2016;
-
-    if (!teamDetails[leagueId] || !teamDetails[leagueId][seasonId] || teamDetails[leagueId][seasonId].isFetching) {
-      return (
-        <Loader active inline='centered' />
-      );
+    if (navData.leagueId !== nextNavData.leagueId || navData.seasonId !== nextNavData.seasonId) {
+      fetchDetails(nextNavData.leagueId, nextNavData.seasonId);
     }
+  }
 
-    return <h1>Loaded Team Details</h1>;
+  render() {
+    // TODO: use teamDetails to display data
+    const { teamDetails } = this.props;
+
+    if (teamDetails && teamDetails.isFetching) { // Data is loading
+      return <Loader active inline='centered' />;
+    } else if (!teamDetails) { // Need to input a league ID
+      return <h1>Please input a valid League ID or Season</h1>;
+    } else if (getValue('data.errorMessage', teamDetails, false)) { // Error retrieving the data
+      return <ErrorMessage errorMessage={getValue('data.errorMessage', teamDetails, false)} />;
+    }
+    // Valid data returned
+    return <h1>Success loading</h1>;
   }
 }
 

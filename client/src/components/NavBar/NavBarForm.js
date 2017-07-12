@@ -56,7 +56,11 @@ class NavBarForm extends React.Component {
   handleFieldChange = (e, { name, value }) => {
     const nameProperty = { ...this.state[name] };
     nameProperty.value = value;
-    nameProperty.error = !(this.isNumber(value) && this.isWithinMaxLength(10)(value));
+    if (typeof value === 'string') {
+      nameProperty.error = !(this.isNumber(value) && this.isWithinMaxLength(10)(value));
+    } else {
+      nameProperty.error = !this.isNumber(value);
+    }
     this.setState({ [name]: nameProperty });
   };
 
@@ -92,6 +96,7 @@ class NavBarForm extends React.Component {
             placeholder='League ID'
             error={this.state.leagueId.error}
             onChange={this.handleFieldChange}
+            defaultValue={this.state.leagueId.value}
           />
           <Form.Field
             required

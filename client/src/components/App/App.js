@@ -14,6 +14,11 @@ const AsyncHome = Loadable({
   loading: LoadingComponent
 });
 
+const AsyncLeagueInfo = Loadable({
+  loader: () => import(/* webpackChunkName: "league-info" */ '../../routes/LeagueInfo'),
+  loading: LoadingComponent
+});
+
 const AsyncRecordVsLeague = Loadable({
   loader: () => import(/* webpackChunkName: "record-vs-league" */ '../../routes/RecordVsLeague'),
   loading: LoadingComponent
@@ -28,6 +33,7 @@ const App = ({ history }) => (
   <ConnectedRouter history={history}>
     <Switch>
       <CoreLayout exact path='/' component={AsyncHome} />
+      <CoreLayout exact path='/leagueInfo' component={AsyncLeagueInfo} />
       <CoreLayout exact path='/teamDetails' component={AsyncRecordVsLeague} />
       <CoreLayout component={AsyncPageNotFound} />
     </Switch>
