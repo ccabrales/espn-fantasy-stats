@@ -6,10 +6,11 @@ import {
   RECEIVE_TEAM_DETAILS,
   actions,
   fetchTeamDetails,
-  fetchTeamDetailsIfNeeded
+  fetchTeamDetailsIfNeeded,
+  formatTeamDetails
 } from '../teamDetailsActions';
-import teamDetails from '../../__mockData__/teamDetails';
-import formattedTeamDetails from '../../__mockData__/teamDetailsFormatted';
+import teamDetails from '../../__mockData__/teamDetails/teamDetails';
+import formattedTeamDetails from '../../__mockData__/teamDetails/teamDetailsFormatted';
 
 jest.mock('../../services/fetchService');
 
@@ -135,18 +136,9 @@ describe('(Actions) teamDetails', () => {
         const store = mockStore({ teamDetails: {} });
         const errorMessage = 'League ID and/or Season ID is invalid';
 
-        const expectedActions = [
-          {
-            type: RECEIVE_TEAM_DETAILS,
-            payload: { errorMessage },
-            leagueId: undefined,
-            seasonId: undefined
-          }
-        ];
-
         return store.dispatch(fetchTeamDetailsIfNeeded())
           .catch(ex => {
-            expect(store.getActions()).toEqual(expectedActions);
+            expect(store.getActions()).toHaveLength(0);
             expect(ex).toEqual(errorMessage);
           });
       });
@@ -165,6 +157,46 @@ describe('(Actions) teamDetails', () => {
           }
         });
         const leagueId = 1234;
+        const seasonId = 2017;
+
+        fetchService.__setMockResponse(teamDetails);
+
+        const expectedActions = [
+          {
+            type: REQUEST_TEAM_DETAILS,
+            leagueId,
+            seasonId
+          },
+          {
+            type: RECEIVE_TEAM_DETAILS,
+            payload: formattedTeamDetails,
+            leagueId,
+            seasonId
+          }
+        ];
+
+        return store.dispatch(fetchTeamDetailsIfNeeded(leagueId, seasonId))
+          .then(() => {
+            expect(store.getActions()).toEqual(expectedActions);
+          });
+      });
+
+      it('Should call the API to fetch details if there was an error in a previous call', () => {
+        const fetchService = require('../../services/fetchService');
+
+        const store = mockStore({
+          teamDetails: {
+            12345: {
+              2017: {
+                isFetching: false,
+                data: {
+                  errorMessage: 'error message'
+                }
+              }
+            }
+          }
+        });
+        const leagueId = 12345;
         const seasonId = 2017;
 
         fetchService.__setMockResponse(teamDetails);
@@ -267,6 +299,99 @@ describe('(Actions) teamDetails', () => {
           .then(() => {
             expect(store.getActions()).toHaveLength(0);
           });
+      });
+    });
+
+    describe('formatTeamDetails', () => {
+      it('Should return an empty array if the input is empty', () => {
+        expect(formatTeamDetails([])).toEqual([]);
+      });
+
+      it('Should correctly add fields to each team', () => {
+        const inputTeams = [
+          {
+            teamLocation: 'First',
+            teamNickname: 'Team',
+            record: {
+              overallWins: 3,
+              overallLosses: 10,
+              overallTies: 1,
+              pointsFor: 1109,
+              pointsAgainst: 1288
+            }
+          },
+          {
+            teamLocation: 'Second',
+            teamNickname: 'Team',
+            record: {
+              overallWins: 6,
+              overallLosses: 8,
+              overallTies: 0,
+              pointsFor: 1328,
+              pointsAgainst: 1235
+            }
+          },
+          {
+            teamLocation: 'Third',
+            teamNickname: 'Team',
+            record: {
+              overallWins: 4,
+              overallLosses: 9,
+              overallTies: 1,
+              pointsFor: 988,
+              pointsAgainst: 1023
+            }
+          }
+        ];
+        const expectedOutput = [
+          {
+            teamLocation: 'First',
+            teamNickname: 'Team',
+            record: {
+              overallWins: 3,
+              overallLosses: 10,
+              overallTies: 1,
+              pointsFor: 1109,
+              pointsAgainst: 1288
+            },
+            teamName: 'First Team',
+            teamRecord: '3-10-1',
+            pointsFor: 1109,
+            pointsAgainst: 1288
+          },
+          {
+            teamLocation: 'Second',
+            teamNickname: 'Team',
+            record: {
+              overallWins: 6,
+              overallLosses: 8,
+              overallTies: 0,
+              pointsFor: 1328,
+              pointsAgainst: 1235
+            },
+            teamName: 'Second Team',
+            teamRecord: '6-8-0',
+            pointsFor: 1328,
+            pointsAgainst: 1235
+          },
+          {
+            teamLocation: 'Third',
+            teamNickname: 'Team',
+            record: {
+              overallWins: 4,
+              overallLosses: 9,
+              overallTies: 1,
+              pointsFor: 988,
+              pointsAgainst: 1023
+            },
+            teamName: 'Third Team',
+            teamRecord: '4-9-1',
+            pointsFor: 988,
+            pointsAgainst: 1023
+          }
+        ];
+
+        expect(formatTeamDetails(inputTeams)).toEqual(expectedOutput);
       });
     });
   });

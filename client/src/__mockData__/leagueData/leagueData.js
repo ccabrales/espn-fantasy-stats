@@ -9043,6 +9043,10 @@ const leagueData = {
       {
         num: 1,
         slotCategoryId: 23
+      },
+      {
+        num: 0,
+        slotCategoryId: 24
       }
     ],
     finance: {
@@ -9123,10 +9127,7 @@ const leagueData = {
     leagueId: '12345',
     defaults: {},
     status: 'offseason',
-    dateModifiedLeague: '2017-04-17T08:30:11.150Z',
-    seasonId: '2016',
-    serverDate: '2017-07-08T19:54:59.181Z',
-    dateModifiedUser: '2017-06-17T20:12:03.000Z'
+    seasonId: '2016'
   }
 };
 

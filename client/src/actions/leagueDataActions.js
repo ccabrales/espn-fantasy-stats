@@ -91,7 +91,8 @@ const rosterMap = {
   20: 'BE',
   21: 'IR',
   22: '',
-  23: 'RB/WR/TE'
+  23: 'RB/WR/TE',
+  24: 'EDR'
 };
 
 /**
@@ -108,7 +109,7 @@ const getRosterSettings = leagueSettings => {
  * Format the league data
  * @param leagueData
  */
-const formatData = leagueData => {
+export const formatLeagueData = leagueData => {
   const { leaguesettings } = leagueData;
   const rosterSettings = getRosterSettings(leaguesettings);
 
@@ -129,7 +130,7 @@ export const fetchLeagueData = (leagueId, seasonId) => (
 
     return fetchService(`/api/leagueInfo?leagueId=${leagueId}&seasonId=${seasonId}`)
       .then(leagueData => {
-        const formattedData = formatData(leagueData);
+        const formattedData = formatLeagueData(leagueData);
         dispatch(receiveLeagueData(formattedData, leagueId, seasonId));
         dispatchSharedData(dispatch, leagueData, leagueId, seasonId);
       })
@@ -174,8 +175,6 @@ export const fetchLeagueDataIfNeeded = (leagueId, seasonId) => (
       return Promise.resolve();
     }
     // If the above if statement is not executed, one of the required params are undefined and no call should be made
-    const errorMessage = 'League ID and/or Season ID is invalid';
-    // dispatch(receiveLeagueData({ errorMessage }, leagueId, seasonId));
-    return Promise.reject(errorMessage);
+    return Promise.reject('League ID and/or Season ID is invalid');
   }
 );

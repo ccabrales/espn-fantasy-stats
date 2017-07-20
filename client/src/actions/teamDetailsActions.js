@@ -23,8 +23,8 @@ export const actions = {
 
 /**
  * Add some additional properties to team details
- * @param data
- * @returns {{teamName: string, teamRecord: string, pointsFor, pointsAgainst}}
+ * @param {Array} teams Array of teams
+ * @returns {Array}
  */
 export const formatTeamDetails = teams => (
   teams.map(team => {
@@ -94,8 +94,6 @@ export const fetchTeamDetailsIfNeeded = (leagueId, seasonId) => (
       return Promise.resolve();
     }
     // If the above if statement is not executed, one of the required params are undefined and no call should be made
-    const errorMessage = 'League ID and/or Season ID is invalid';
-    dispatch(receiveTeamDetails({ errorMessage }, leagueId, seasonId));
-    return Promise.reject(errorMessage);
+    return Promise.reject('League ID and/or Season ID is invalid');
   }
 );
