@@ -12,7 +12,7 @@ const LoadingComponent = ({ isLoading, error }) => {
   if (isLoading) {
     return <Loader active inline='centered' />;
   } else if (error) {
-    return <div>Sorry, there was a problem loading the page. Please try again.</div>;
+    return <div className='route-load-error'>Sorry, there was a problem loading the page. Please try again.</div>;
   }
 
   return null;

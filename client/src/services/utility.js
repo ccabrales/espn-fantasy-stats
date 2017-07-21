@@ -2,7 +2,7 @@
 
 /**
  * Check to see if an object is empty
- * @param obj
+ * @param {Object} obj
  */
 export const isEmpty = obj => obj && Object.keys(obj).length === 0 && obj.constructor === Object;
 

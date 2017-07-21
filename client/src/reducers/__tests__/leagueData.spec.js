@@ -1,18 +1,18 @@
-import reducer, { initialState } from '../teamDetails';
-import { REQUEST_TEAM_DETAILS, RECEIVE_TEAM_DETAILS } from '../../actions/teamDetailsActions';
+import reducer, { initialState } from '../leagueData';
+import { REQUEST_LEAGUE_DATA, RECEIVE_LEAGUE_DATA } from '../../actions/leagueDataActions';
 
-describe('(Reducers) teamDetails', () => {
+describe('(Reducers) leagueData', () => {
   it('Should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual(initialState);
   });
 
-  describe('REQUEST_TEAM_DETAILS handler', () => {
+  describe('REQUEST_LEAGUE_DATA handler', () => {
     const leagueId = 12345;
     const seasonId = 2017;
 
-    it('Should correctly add details to store when it begins empty', () => {
+    it('Should correctly add data to store when it begins empty', () => {
       const newState = reducer({}, {
-        type: REQUEST_TEAM_DETAILS,
+        type: REQUEST_LEAGUE_DATA,
         leagueId,
         seasonId
       });
@@ -26,20 +26,20 @@ describe('(Reducers) teamDetails', () => {
       });
     });
 
-    it('Should correctly add details to store when it contains existing data', () => {
+    it('Should correctly add data to store when it contains existing data', () => {
       const firstState = {
         12345: {
           2016: {
             isFetching: false,
             data: {
-              teams: [ { teamId: 1 } ]
+              leaguesettings: {}
             }
           }
         }
       };
       const newState = reducer(firstState,
         {
-          type: REQUEST_TEAM_DETAILS,
+          type: REQUEST_LEAGUE_DATA,
           leagueId,
           seasonId
         }
@@ -57,18 +57,18 @@ describe('(Reducers) teamDetails', () => {
     });
   });
 
-  describe('RECEIVE_TEAM_DETAILS handler', () => {
+  describe('RECEIVE_LEAGUE_DATA handler', () => {
     const leagueId = 12345;
     const seasonId = 2017;
 
-    it('Should correctly add details to store when it begins empty', () => {
+    it('Should correctly add data to store when it begins empty', () => {
       const payload = {
-        teams: [
-          { teamId: 1 }, { teamId: 2 }
-        ]
+        leaguesettings: {
+          size: 10
+        }
       };
       const newState = reducer({}, {
-        type: RECEIVE_TEAM_DETAILS,
+        type: RECEIVE_LEAGUE_DATA,
         payload,
         leagueId,
         seasonId
@@ -93,13 +93,13 @@ describe('(Reducers) teamDetails', () => {
         }
       };
       const payload = {
-        teams: [
-          { teamId: 1 }, { teamId: 2 }
-        ]
+        leaguesettings: {
+          size: 10
+        }
       };
       const newState = reducer(firstState,
         {
-          type: RECEIVE_TEAM_DETAILS,
+          type: RECEIVE_LEAGUE_DATA,
           payload,
           leagueId,
           seasonId
