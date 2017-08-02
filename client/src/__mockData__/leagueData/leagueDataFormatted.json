@@ -1,0 +1,1311 @@
+{
+  "leaguesettings": {
+    "playoffHomeTeamBonus": 0,
+    "draftStatusTypeId": 2,
+    "playerAcquisitionType": 1,
+    "draftOrderTypeId": 0,
+    "divisions": [
+      {
+        "divisionId": 0,
+        "name": "Division 1",
+        "size": 5
+      },
+      {
+        "divisionId": 1,
+        "name": "Division 2",
+        "size": 5
+      }
+    ],
+    "leagueStatusTypeId": 3,
+    "homeTeamBonus": 0,
+    "scoringItems": [
+      {
+        "isReverseItem": false,
+        "statId": 4,
+        "points": 4,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 8,
+        "points": 1,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 19,
+        "points": 2,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": true,
+        "statId": 20,
+        "points": -2,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 25,
+        "points": 6,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 26,
+        "points": 2,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 28,
+        "points": 1,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 43,
+        "points": 6,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 44,
+        "points": 2,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 48,
+        "points": 1,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 63,
+        "points": 6,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": true,
+        "statId": 72,
+        "points": -2,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 74,
+        "points": 5,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 77,
+        "points": 4,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 80,
+        "points": 3,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": true,
+        "statId": 85,
+        "points": -1,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 86,
+        "points": 1,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 89,
+        "points": 5,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 90,
+        "points": 4,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 91,
+        "points": 3,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 92,
+        "points": 1,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 93,
+        "points": 6,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 95,
+        "points": 2,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 96,
+        "points": 2,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 97,
+        "points": 2,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 98,
+        "points": 2,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 99,
+        "points": 1,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 101,
+        "points": 6,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 101,
+        "points": 6,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 102,
+        "points": 6,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 102,
+        "points": 6,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 103,
+        "points": 6,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 104,
+        "points": 6,
+        "isTeamScoringItem": false
+      },
+      {
+        "isReverseItem": false,
+        "statId": 104,
+        "points": 6,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": true,
+        "statId": 123,
+        "points": -1,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": true,
+        "statId": 124,
+        "points": -3,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": true,
+        "statId": 125,
+        "points": -5,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 128,
+        "points": 5,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 129,
+        "points": 3,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": false,
+        "statId": 130,
+        "points": 2,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": true,
+        "statId": 132,
+        "points": -1,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": true,
+        "statId": 133,
+        "points": -3,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": true,
+        "statId": 134,
+        "points": -5,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": true,
+        "statId": 135,
+        "points": -6,
+        "isTeamScoringItem": true
+      },
+      {
+        "isReverseItem": true,
+        "statId": 136,
+        "points": -7,
+        "isTeamScoringItem": true
+      }
+    ],
+    "rosterMoveLimit": -1,
+    "dateDraftCompleted": "2016-07-26T05:22:21.387Z",
+    "finalRegularSeasonMatchupPeriodId": 13,
+    "playoffSeedings": [
+      1,
+      9,
+      14,
+      2,
+      5,
+      12,
+      13,
+      11,
+      4,
+      3
+    ],
+    "waiverProcessHour": 8,
+    "scoringPeriodsByMatchupPeriod": {
+      "1": [
+        1
+      ],
+      "2": [
+        2
+      ],
+      "3": [
+        3
+      ],
+      "4": [
+        4
+      ],
+      "5": [
+        5
+      ],
+      "6": [
+        6
+      ],
+      "7": [
+        7
+      ],
+      "8": [
+        8
+      ],
+      "9": [
+        9
+      ],
+      "10": [
+        10
+      ],
+      "11": [
+        11
+      ],
+      "12": [
+        12
+      ],
+      "13": [
+        13
+      ],
+      "14": [
+        14,
+        15
+      ],
+      "15": [
+        16,
+        17
+      ]
+    },
+    "waiverDetails": [
+      {
+        "processedCount": 2,
+        "dateProcessed": 20130817
+      },
+      {
+        "processedCount": 6,
+        "dateProcessed": 20130911
+      },
+      {
+        "processedCount": 3,
+        "dateProcessed": 20130913
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20130915
+      },
+      {
+        "processedCount": 11,
+        "dateProcessed": 20130918
+      },
+      {
+        "processedCount": 9,
+        "dateProcessed": 20130925
+      },
+      {
+        "processedCount": 11,
+        "dateProcessed": 20131002
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20131004
+      },
+      {
+        "processedCount": 11,
+        "dateProcessed": 20131009
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20131011
+      },
+      {
+        "processedCount": 10,
+        "dateProcessed": 20131016
+      },
+      {
+        "processedCount": 12,
+        "dateProcessed": 20131023
+      },
+      {
+        "processedCount": 11,
+        "dateProcessed": 20131030
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20131101
+      },
+      {
+        "processedCount": 12,
+        "dateProcessed": 20131106
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20131109
+      },
+      {
+        "processedCount": 13,
+        "dateProcessed": 20131113
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20131115
+      },
+      {
+        "processedCount": 9,
+        "dateProcessed": 20131120
+      },
+      {
+        "processedCount": 5,
+        "dateProcessed": 20131127
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20131204
+      },
+      {
+        "processedCount": 6,
+        "dateProcessed": 20131211
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20131213
+      },
+      {
+        "processedCount": 5,
+        "dateProcessed": 20131218
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20131221
+      },
+      {
+        "processedCount": 6,
+        "dateProcessed": 20131225
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20140819
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20140828
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20140904
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20140905
+      },
+      {
+        "processedCount": 13,
+        "dateProcessed": 20140910
+      },
+      {
+        "processedCount": 3,
+        "dateProcessed": 20140912
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20140914
+      },
+      {
+        "processedCount": 10,
+        "dateProcessed": 20140917
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20140918
+      },
+      {
+        "processedCount": 3,
+        "dateProcessed": 20140919
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20140920
+      },
+      {
+        "processedCount": 16,
+        "dateProcessed": 20140924
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20140926
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20140928
+      },
+      {
+        "processedCount": 13,
+        "dateProcessed": 20141001
+      },
+      {
+        "processedCount": 5,
+        "dateProcessed": 20141003
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20141005
+      },
+      {
+        "processedCount": 14,
+        "dateProcessed": 20141008
+      },
+      {
+        "processedCount": 4,
+        "dateProcessed": 20141010
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20141011
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20141012
+      },
+      {
+        "processedCount": 16,
+        "dateProcessed": 20141015
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20141017
+      },
+      {
+        "processedCount": 9,
+        "dateProcessed": 20141022
+      },
+      {
+        "processedCount": 3,
+        "dateProcessed": 20141024
+      },
+      {
+        "processedCount": 13,
+        "dateProcessed": 20141029
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20141031
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20141102
+      },
+      {
+        "processedCount": 14,
+        "dateProcessed": 20141105
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20141106
+      },
+      {
+        "processedCount": 3,
+        "dateProcessed": 20141107
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20141109
+      },
+      {
+        "processedCount": 12,
+        "dateProcessed": 20141112
+      },
+      {
+        "processedCount": 3,
+        "dateProcessed": 20141114
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20141116
+      },
+      {
+        "processedCount": 16,
+        "dateProcessed": 20141119
+      },
+      {
+        "processedCount": 3,
+        "dateProcessed": 20141121
+      },
+      {
+        "processedCount": 8,
+        "dateProcessed": 20141126
+      },
+      {
+        "processedCount": 5,
+        "dateProcessed": 20141203
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20141205
+      },
+      {
+        "processedCount": 6,
+        "dateProcessed": 20141210
+      },
+      {
+        "processedCount": 5,
+        "dateProcessed": 20141217
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20141219
+      },
+      {
+        "processedCount": 7,
+        "dateProcessed": 20141224
+      },
+      {
+        "processedCount": 3,
+        "dateProcessed": 20150722
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20150809
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20150909
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20150911
+      },
+      {
+        "processedCount": 13,
+        "dateProcessed": 20150916
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20150917
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20150918
+      },
+      {
+        "processedCount": 10,
+        "dateProcessed": 20150923
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20150924
+      },
+      {
+        "processedCount": 14,
+        "dateProcessed": 20150930
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20151001
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20151002
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20151003
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20151004
+      },
+      {
+        "processedCount": 15,
+        "dateProcessed": 20151007
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20151008
+      },
+      {
+        "processedCount": 9,
+        "dateProcessed": 20151014
+      },
+      {
+        "processedCount": 11,
+        "dateProcessed": 20151021
+      },
+      {
+        "processedCount": 11,
+        "dateProcessed": 20151028
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20151030
+      },
+      {
+        "processedCount": 14,
+        "dateProcessed": 20151104
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20151105
+      },
+      {
+        "processedCount": 15,
+        "dateProcessed": 20151111
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20151113
+      },
+      {
+        "processedCount": 8,
+        "dateProcessed": 20151118
+      },
+      {
+        "processedCount": 11,
+        "dateProcessed": 20151125
+      },
+      {
+        "processedCount": 15,
+        "dateProcessed": 20151202
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20151203
+      },
+      {
+        "processedCount": 9,
+        "dateProcessed": 20151209
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20151210
+      },
+      {
+        "processedCount": 14,
+        "dateProcessed": 20151216
+      },
+      {
+        "processedCount": 5,
+        "dateProcessed": 20151223
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20151224
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20151225
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20151230
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20160101
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20160727
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20160729
+      },
+      {
+        "processedCount": 8,
+        "dateProcessed": 20160914
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20160915
+      },
+      {
+        "processedCount": 10,
+        "dateProcessed": 20160921
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20160923
+      },
+      {
+        "processedCount": 9,
+        "dateProcessed": 20160928
+      },
+      {
+        "processedCount": 12,
+        "dateProcessed": 20161005
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20161006
+      },
+      {
+        "processedCount": 8,
+        "dateProcessed": 20161012
+      },
+      {
+        "processedCount": 11,
+        "dateProcessed": 20161019
+      },
+      {
+        "processedCount": 2,
+        "dateProcessed": 20161020
+      },
+      {
+        "processedCount": 9,
+        "dateProcessed": 20161026
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20161027
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20161028
+      },
+      {
+        "processedCount": 15,
+        "dateProcessed": 20161102
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20161103
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20161105
+      },
+      {
+        "processedCount": 7,
+        "dateProcessed": 20161109
+      },
+      {
+        "processedCount": 9,
+        "dateProcessed": 20161116
+      },
+      {
+        "processedCount": 9,
+        "dateProcessed": 20161123
+      },
+      {
+        "processedCount": 8,
+        "dateProcessed": 20161130
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20161201
+      },
+      {
+        "processedCount": 1,
+        "dateProcessed": 20161204
+      },
+      {
+        "processedCount": 6,
+        "dateProcessed": 20161207
+      },
+      {
+        "processedCount": 3,
+        "dateProcessed": 20161214
+      },
+      {
+        "processedCount": 3,
+        "dateProcessed": 20161221
+      },
+      {
+        "processedCount": 3,
+        "dateProcessed": 20161228
+      }
+    ],
+    "playoffTieRuleRawStatId": 0,
+    "matchupPeriodTypeId": 1,
+    "restrictionTypeId": 0,
+    "usingUndroppableList": true,
+    "draftPickTradingEnabled": false,
+    "waiverProcessDays": 123,
+    "tradeDeadline": "2016-11-16T17:00:00.000Z",
+    "waiverHours": 24,
+    "playoffMatchupLength": 2,
+    "vetoVotesRequired": 0,
+    "size": 10,
+    "scoringDecimalPlaces": 0,
+    "minimumBidAmount": 1,
+    "waiverOrderSystemTypeId": 1,
+    "playoffSeedingTieRule": 1,
+    "tradeLimit": -1,
+    "allowsTrades": true,
+    "season": 2016,
+    "playoffTeamCount": 4,
+    "timePerDraftSelection": 90,
+    "lineupLocktimeType": 0,
+    "finalMatchupPeriodId": 15,
+    "regularSeasonMatchupPeriodCount": 13,
+    "accessTypeId": 1,
+    "id": 298982,
+    "scoringTypeId": 1,
+    "futureKeeperCount": 0,
+    "tieRule": 0,
+    "defaultWaiverOrder": 0,
+    "defaultUniverseId": 0,
+    "playerAcquisitionBudget": 100,
+    "name": "Ten Guys One Cup",
+    "draftTypeId": 0,
+    "draftAuctionBudget": 200,
+    "positionItems": [
+      {
+        "max": 0,
+        "positionId": 0
+      },
+      {
+        "max": 4,
+        "positionId": 1
+      },
+      {
+        "max": 8,
+        "positionId": 2
+      },
+      {
+        "max": 8,
+        "positionId": 3
+      },
+      {
+        "max": 3,
+        "positionId": 4
+      },
+      {
+        "max": 3,
+        "positionId": 5
+      },
+      {
+        "max": 0,
+        "positionId": 6
+      },
+      {
+        "max": 0,
+        "positionId": 7
+      },
+      {
+        "max": 0,
+        "positionId": 8
+      },
+      {
+        "max": 0,
+        "positionId": 9
+      },
+      {
+        "max": 0,
+        "positionId": 10
+      },
+      {
+        "max": 0,
+        "positionId": 11
+      },
+      {
+        "max": 0,
+        "positionId": 12
+      },
+      {
+        "max": 0,
+        "positionId": 13
+      },
+      {
+        "max": 0,
+        "positionId": 14
+      },
+      {
+        "max": 0,
+        "positionId": 15
+      },
+      {
+        "max": 3,
+        "positionId": 16
+      }
+    ],
+    "tieRuleRawStatId": -1,
+    "leagueSubTypeId": 0,
+    "premiumTypeId": 0,
+    "leagueFormatTypeId": 0,
+    "tradeRevisionHours": 48,
+    "playoffSeedingTieRuleRawStatId": 0,
+    "draftOrder": [
+      5,
+      11,
+      13,
+      3,
+      14,
+      2,
+      1,
+      12,
+      4,
+      9
+    ],
+    "isViewable": true,
+    "usesPlayerAcquisitionBudget": true,
+    "leagueMembers": [
+      {
+        "isLeagueManager": false,
+        "lastName": "Mount",
+        "inviteId": 0,
+        "isLeagueCreator": true,
+        "userProfileId": 22456240,
+        "userName": "M Mount",
+        "firstName": "Michael"
+      },
+      {
+        "isLeagueManager": false,
+        "lastName": "Nackeeran",
+        "inviteId": 0,
+        "isLeagueCreator": false,
+        "userProfileId": 14725639,
+        "userName": "sirpi.raiders",
+        "firstName": "Sirpi"
+      },
+      {
+        "isLeagueManager": false,
+        "lastName": "Babcock",
+        "inviteId": 0,
+        "isLeagueCreator": false,
+        "userProfileId": 23266634,
+        "userName": "Ownchez",
+        "firstName": "Brian "
+      },
+      {
+        "isLeagueManager": false,
+        "lastName": "Sa",
+        "inviteId": 0,
+        "isLeagueCreator": false,
+        "userProfileId": 23368496,
+        "userName": "mrhockey220",
+        "firstName": "Alec"
+      },
+      {
+        "isLeagueManager": false,
+        "lastName": "Oatman",
+        "inviteId": 0,
+        "isLeagueCreator": false,
+        "userProfileId": 23368802,
+        "userName": "thebigoats",
+        "firstName": "Michael"
+      },
+      {
+        "isLeagueManager": false,
+        "lastName": "Fladger",
+        "inviteId": 0,
+        "isLeagueCreator": false,
+        "userProfileId": 29845606,
+        "userName": "grandnightmare",
+        "firstName": "Jordan"
+      },
+      {
+        "isLeagueManager": false,
+        "lastName": "Cabrales",
+        "inviteId": 0,
+        "isLeagueCreator": false,
+        "userProfileId": 34994352,
+        "userName": "C Cabrales",
+        "firstName": "Casey"
+      },
+      {
+        "isLeagueManager": false,
+        "lastName": "Badillo",
+        "inviteId": 0,
+        "isLeagueCreator": false,
+        "userProfileId": 69968088,
+        "userName": "TrexThetruth",
+        "firstName": "Brian"
+      },
+      {
+        "isLeagueManager": false,
+        "lastName": "knutson",
+        "inviteId": 0,
+        "isLeagueCreator": false,
+        "userProfileId": 13231224,
+        "userName": "kooper 777",
+        "firstName": "kooper"
+      },
+      {
+        "isLeagueManager": false,
+        "lastName": "Tellakula",
+        "inviteId": 0,
+        "isLeagueCreator": false,
+        "userProfileId": 26174624,
+        "userName": "itsthenaki",
+        "firstName": "Nikhil"
+      }
+    ],
+    "firstScoringPeriodId": 1,
+    "regularSeasonMatchupLength": 1,
+    "playoffTieRule": 1,
+    "allowOutOfUniverseStatsAndTrades": false,
+    "firstMatchupPeriodId": 1,
+    "leagueTypeId": 0,
+    "finalScoringPeriodId": 17,
+    "finalCalculatedRanking": [
+      1,
+      9,
+      14,
+      2,
+      5,
+      11,
+      4,
+      13,
+      12,
+      3
+    ],
+    "seasonAcquisitionLimit": -1,
+    "rosterLocktimeType": 0,
+    "finance": {
+      "moveToIR": 0,
+      "miscFee": 0,
+      "acquisition": 0,
+      "loss": 0,
+      "trade": 0,
+      "drop": 0,
+      "moveToActive": 0,
+      "entryFee": 0
+    },
+    "matchupAcquisitionLimits": [
+      {
+        "limit": -1,
+        "matchupPeriodId": 1
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 2
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 3
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 4
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 5
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 6
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 7
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 8
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 9
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 10
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 11
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 12
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 13
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 14
+      },
+      {
+        "limit": -1,
+        "matchupPeriodId": 15
+      }
+    ],
+    "currentKeeperCount": 0,
+    "rosterSettings": [
+      {
+        "name": "QB",
+        "num": 1
+      },
+      {
+        "name": "TQB",
+        "num": 0
+      },
+      {
+        "name": "RB",
+        "num": 2
+      },
+      {
+        "name": "RB/WR",
+        "num": 1
+      },
+      {
+        "name": "WR",
+        "num": 2
+      },
+      {
+        "name": "WR/TE",
+        "num": 0
+      },
+      {
+        "name": "TE",
+        "num": 1
+      },
+      {
+        "name": "OP",
+        "num": 0
+      },
+      {
+        "name": "DT",
+        "num": 0
+      },
+      {
+        "name": "DE",
+        "num": 0
+      },
+      {
+        "name": "LB",
+        "num": 0
+      },
+      {
+        "name": "DL",
+        "num": 0
+      },
+      {
+        "name": "CB",
+        "num": 0
+      },
+      {
+        "name": "S",
+        "num": 0
+      },
+      {
+        "name": "DB",
+        "num": 0
+      },
+      {
+        "name": "DP",
+        "num": 0
+      },
+      {
+        "name": "D/ST",
+        "num": 1
+      },
+      {
+        "name": "K",
+        "num": 1
+      },
+      {
+        "name": "P",
+        "num": 0
+      },
+      {
+        "name": "HC",
+        "num": 0
+      },
+      {
+        "name": "BE",
+        "num": 7
+      },
+      {
+        "name": "IR",
+        "num": 0
+      },
+      {
+        "name": "",
+        "num": 0
+      },
+      {
+        "name": "RB/WR/TE",
+        "num": 0
+      }
+    ]
+  },
+  "metadata": {
+    "leagueId": "298982",
+    "defaults": {},
+    "status": "offseason",
+    "seasonId": "2016"
+  }
+}

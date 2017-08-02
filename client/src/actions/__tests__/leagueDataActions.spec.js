@@ -10,9 +10,9 @@ import {
   formatLeagueData
 } from '../leagueDataActions';
 import { RECEIVE_TEAM_DETAILS } from '../teamDetailsActions';
-import mockLeagueData from '../../__mockData__/leagueData/leagueData';
-import mockLeagueDataFormatted from '../../__mockData__/leagueData/leagueDataFormatted';
-import mockTeamDetailsFormatted from '../../__mockData__/teamDetails/teamDetailsFormatted';
+import mockLeagueData from '../../__mockData__/leagueData/leagueData.json';
+import mockLeagueDataFormatted from '../../__mockData__/leagueData/leagueDataFormatted.json';
+import mockTeamDetailsFormatted from '../../__mockData__/teamDetails/teamDetailsFormatted.json';
 
 jest.mock('../../services/fetchService');
 

@@ -9,8 +9,8 @@ import {
   fetchTeamDetailsIfNeeded,
   formatTeamDetails
 } from '../teamDetailsActions';
-import teamDetails from '../../__mockData__/teamDetails/teamDetails';
-import formattedTeamDetails from '../../__mockData__/teamDetails/teamDetailsFormatted';
+import teamDetails from '../../__mockData__/teamDetails/teamDetails.json';
+import formattedTeamDetails from '../../__mockData__/teamDetails/teamDetailsFormatted.json';
 
 jest.mock('../../services/fetchService');
 
@@ -308,90 +308,7 @@ describe('(Actions) teamDetails', () => {
       });
 
       it('Should correctly add fields to each team', () => {
-        const inputTeams = [
-          {
-            teamLocation: 'First',
-            teamNickname: 'Team',
-            record: {
-              overallWins: 3,
-              overallLosses: 10,
-              overallTies: 1,
-              pointsFor: 1109,
-              pointsAgainst: 1288
-            }
-          },
-          {
-            teamLocation: 'Second',
-            teamNickname: 'Team',
-            record: {
-              overallWins: 6,
-              overallLosses: 8,
-              overallTies: 0,
-              pointsFor: 1328,
-              pointsAgainst: 1235
-            }
-          },
-          {
-            teamLocation: 'Third',
-            teamNickname: 'Team',
-            record: {
-              overallWins: 4,
-              overallLosses: 9,
-              overallTies: 1,
-              pointsFor: 988,
-              pointsAgainst: 1023
-            }
-          }
-        ];
-        const expectedOutput = [
-          {
-            teamLocation: 'First',
-            teamNickname: 'Team',
-            record: {
-              overallWins: 3,
-              overallLosses: 10,
-              overallTies: 1,
-              pointsFor: 1109,
-              pointsAgainst: 1288
-            },
-            teamName: 'First Team',
-            teamRecord: '3-10-1',
-            pointsFor: 1109,
-            pointsAgainst: 1288
-          },
-          {
-            teamLocation: 'Second',
-            teamNickname: 'Team',
-            record: {
-              overallWins: 6,
-              overallLosses: 8,
-              overallTies: 0,
-              pointsFor: 1328,
-              pointsAgainst: 1235
-            },
-            teamName: 'Second Team',
-            teamRecord: '6-8-0',
-            pointsFor: 1328,
-            pointsAgainst: 1235
-          },
-          {
-            teamLocation: 'Third',
-            teamNickname: 'Team',
-            record: {
-              overallWins: 4,
-              overallLosses: 9,
-              overallTies: 1,
-              pointsFor: 988,
-              pointsAgainst: 1023
-            },
-            teamName: 'Third Team',
-            teamRecord: '4-9-1',
-            pointsFor: 988,
-            pointsAgainst: 1023
-          }
-        ];
-
-        expect(formatTeamDetails(inputTeams)).toEqual(expectedOutput);
+        expect(formatTeamDetails(teamDetails.teams)).toEqual(formattedTeamDetails.teams);
       });
     });
   });
